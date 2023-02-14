@@ -1,2 +1,2 @@
-# repositorio1
-Repositóro para códigos.
+# Códigos em linguagem C
+Repositóro para códigos em C.
