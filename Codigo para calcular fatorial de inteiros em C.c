@@ -24,5 +24,5 @@ return num*fat(num-1);
 return 1;    
 }
 
-/*Ex: 5x4x3x2x1 --> (i-1)*(i-1)*(i-1)... */
+/*Ex: 5x4x3x2x1 --> (i-1)*(i-2)*(i-3)... */
 /* Se i=0 retorna 1. */
