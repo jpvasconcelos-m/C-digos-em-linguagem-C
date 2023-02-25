@@ -1,0 +1,28 @@
+/*Receber o 3 números, retornar a soma do fatorial de cada um deles*/
+#include <stdio.h>
+#include <stdlib.h>
+//Protótipo da função de fatorial.
+int fatorial(int num);
+int main(){
+int num1,num2,num3,soma;
+//Receber o os três números:
+scanf("%d",&num1);
+scanf("%d",&num2);
+scanf("%d",&num3);
+//Calcular o fatorial dos três:
+int fat_num1=fatorial(num1);
+int fat_num2=fatorial(num2);
+int fat_num3=fatorial(num3);
+//Somar os três fatoriais:
+soma=fat_num1+fat_num2+fat_num3;
+printf("%d",soma);
+
+}
+int fatorial(int num){ //Função que calcula o fatorial de um número.
+    
+    if (num>0)
+return num*fatorial(num-1);
+    else if(num==0)
+return 1;    
+    
+}
