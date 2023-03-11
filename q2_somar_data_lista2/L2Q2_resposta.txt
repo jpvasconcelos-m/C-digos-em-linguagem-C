@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+int eh_bissexto(int ano){ //Função que vê se o ano é bissexto.
+    if(ano % 400 == 0)
+        return 1;
+    else if(ano % 100 == 0)
+        return 0;
+    else if(ano % 4 == 0)
+        return 1;    
+    else
+        return 0;
+}
+
+int tamanho_mes( int mes,int ano){
+    
+      /*
+-Mês normal = 31;
+-Fevereiro bissexto = 29
+-Fevereiro menor = 28
+-Mês menor = 30
+   meses menores-->4,6,9,11
+*/
+
+    if (mes == 2){
+        if (eh_bissexto(ano)==1)
+        return 29;
+        else 
+        return 28;
+    }
+    else if (mes == 2)
+        return 28;
+    else if ((mes == 4)||(mes == 6))
+         return 30;
+    else  if ((mes == 9)||(mes == 11))
+         return 30;
+    else return 31;     
+}
+int main(){
+
+    int dia,mes,ano,add_dias;
+    scanf("%d/%d/%d",&dia,&mes,&ano);
+    scanf("\n%d",&add_dias);
+    
+ 
+    for(int i=0; i<add_dias; add_dias--){ //Loop para somar os dias 1 por 1 e realizar as alterações no mês e ano:
+    if(dia >= tamanho_mes(mes,ano)){
+        dia = dia - tamanho_mes(mes,ano);
+        mes++;
+    }
+    dia++;    
+    if (mes > 12){
+        mes = mes-12;
+        ano++;
+    }
+    }
+    
+    if((dia<10) && (mes<10)) //Colocar 0 antes do dia ou mês caso sejam menores que 10:
+        printf("0%d/0%d/%d",dia,mes,ano);
+    else if (dia<10)
+        printf("0%d/%d/%d",dia,mes,ano);
+    else if (mes<10)
+        printf("%d/0%d/%d",dia,mes,ano);
+    else
+        printf("%d/%d/%d",dia,mes,ano);
+    
+    
+    
+}
